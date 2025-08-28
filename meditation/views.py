@@ -10,20 +10,7 @@ def home(request):
 # views.py
 from django.shortcuts import render
 
-def home_view(request):
-    team_members = [
-        {"name": "JansiMerry", "title": "Clinical Director / Psychologist", "image": "/static/images/jansimerry.jpg"},
-        {"name": "Rizza", "title": "Psychologist", "image": "/static/images/rizza.jpg"},
-        {"name": "John Smith", "title": "Clinical Director / Psychologist", "image": "/static/images/johnsmith.jpg"},
-        {"name": "Brady John", "title": "Psychologist", "image": "/static/images/bradyjohn.jpg"},
-        {"name": "Lisa Wong", "title": "Senior Therapist", "image": "/static/images/lisawong.jpg"},
-        {"name": "Michael Chen", "title": "Psychotherapist", "image": "/static/images/michaelchen.jpg"},
-        {"name": "Sarah Lee", "title": "Clinical Counselor", "image": "/static/images/sarahlee.jpg"},
-        {"name": "Ben Carter", "title": "Family Therapist", "image": "/static/images/bencarter.jpg"},
-        {"name": "Olivia Perez", "title": "Counselling Psychologist", "image": "/static/images/oliviaperez.jpg"},
-        {"name": "Daniel Rodriguez", "title": "Child Psychologist", "image": "/static/images/danielrodriguez.jpg"}
-    ]
-    return render(request, "home.html", {"team_members": team_members})
+
 def about(request):
     return render(request, 'about.html')
 
