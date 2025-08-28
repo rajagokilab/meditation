@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-blke!_nn-^#2a#ada_7(%s^jk=b_188k3no11)sm3emwkpawem'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,7 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'meditation/ 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'meditation'/ 'staticfiles'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
