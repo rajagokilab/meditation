@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    
+        .video-thumbnail-container {
+            cursor: pointer;
+            position: relative;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .play-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-[#ffedea] font-inter">
+     <div class="max-w-4xl mx-auto p-4 md:p-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-[#553355] my-8">Discover popular meditations.</h1>
+
+        <!-- Meditation Cards -->
+        <div class="space-y-6">
+
+            <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div class="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden video-thumbnail-container" data-video-url="{% static 'videos/v4.mp4' %}">
+                    <img src="{% static 'images/t5.png' %}" alt="Meditation 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-button">
+                        <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm text-gray-500">Alexis Santos</p>
+                    <h3 class="text-xl font-semibold text-[#553355] mb-2">Natural mindful walking meditation</h3>
+                    <p class="text-gray-600 text-sm mb-4">Taking a relaxed walk mindfully will soothe the nervous system, get you outside, and can refresh you mentally when you're feeling low or off.</p>
+                    <div class="w-full h-1 bg-gray-200 rounded-full relative">
+                        <div class="absolute h-full bg-[#553355]" style="width: 30%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0:00</span>
+                        <span>12:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div class="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden video-thumbnail-container" data-video-url="{% static 'videos/v0.mp4' %}">
+                    <img src="{% static 'images/t4.png' %}" alt="Meditation 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-button">
+                        <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm text-gray-500">Alexis Santos</p>
+                    <h3 class="text-xl font-semibold text-[#553355] mb-2">Natural mindful walking meditation</h3>
+                    <p class="text-gray-600 text-sm mb-4">Taking a relaxed walk mindfully will soothe the nervous system, get you outside, and can refresh you mentally when you're feeling low or off.</p>
+                    <div class="w-full h-1 bg-gray-200 rounded-full relative">
+                        <div class="absolute h-full bg-[#553355]" style="width: 30%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0:00</span>
+                        <span>12:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div class="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden video-thumbnail-container" data-video-url="{% static 'videos/v1.mp4' %}">
+                    <img src="{% static 'images/13.jpg' %}" alt="Meditation 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-button">
+                        <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm text-gray-500">Sharon Salzberg</p>
+                    <h3 class="text-xl font-semibold text-[#553355] mb-2">Being with Big Emotions</h3>
+                    <p class="text-gray-600 text-sm mb-4">Bring an open minded curiosity to your big emotions and get to know yourself more fully, developing resilience to deal with all the feels.</p>
+                    <div class="w-full h-1 bg-gray-200 rounded-full relative">
+                        <div class="absolute h-full bg-[#553355]" style="width: 50%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0:00</span>
+                        <span>9:50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div class="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden video-thumbnail-container" data-video-url="{% static 'videos/v3.mp4' %}">
+                    <img src="{% static 'images/t1.png' %}" alt="Meditation 4" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-button">
+                        <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm text-gray-500">Joseph Goldstein</p>
+                    <h3 class="text-xl font-semibold text-[#553355] mb-2">Balanced Compassion</h3>
+                    <p class="text-gray-600 text-sm mb-4">We’re living in challenging times. Try practicing balance, letting you open to the suffering of the world without becoming overwhelmed.</p>
+                    <div class="w-full h-1 bg-gray-200 rounded-full relative">
+                        <div class="absolute h-full bg-[#553355]" style="width: 70%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0:00</span>
+                        <span>7:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                <div class="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden video-thumbnail-container" data-video-url="{% static 'videos/v4.mp4' %}">
+                    <img src="{% static 'images/t3.png' %}" alt="Meditation 5" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center play-button">
+                        <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-sm text-gray-500">Sebene Selassie</p>
+                    <h3 class="text-xl font-semibold text-[#553355] mb-2">Self-Kindness for Stress</h3>
+                    <p class="text-gray-600 text-sm mb-4">Showing self-compassion to ourselves in hard times bolsters our resilience, so we can learn from setbacks rather than getting stuck in rumination.</p>
+                    <div class="w-full h-1 bg-gray-200 rounded-full relative">
+                        <div class="absolute h-full bg-[#553355]" style="width: 90%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0:00</span>
+                        <span>12:09</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Trial Button -->
+        <div class="text-center mt-10">
+            <button class="bg-[#553355] text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-[#6A406A] transition-colors duration-300 shadow-md">
+                Get 14 Days Free Trial
+            </button>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-75 flex items-center justify-center hidden">
+        <div class="relative w-full max-w-2xl mx-auto rounded-lg overflow-hidden">
+            <video id="videoPlayer" class="w-full h-auto" controls></video>
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail-container');
+            const videoModal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            videoThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    const videoUrl = thumbnail.dataset.videoUrl;
+                    videoPlayer.src = videoUrl;
+                    videoPlayer.play();
+                    videoModal.classList.remove('hidden');
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                videoModal.classList.add('hidden');
+                videoPlayer.pause();
+                videoPlayer.src = '';
+            });
+
+            videoModal.addEventListener('click', (event) => {
+                if (event.target === videoModal) {
+                    videoModal.classList.add('hidden');
+                    videoPlayer.pause();
+                    videoPlayer.src = '';
+                }
+            });
+        });
+        videoThumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        const videoUrl = thumbnail.dataset.videoUrl; // Must be correct URL
+        videoPlayer.src = videoUrl; // Set src dynamically
+        videoPlayer.load();          // Load the new video
+        videoPlayer.play();          // Start playing
+        videoModal.classList.remove('hidden');
+    });
+});
+
+closeModalBtn.addEventListener('click', () => {
+    videoModal.classList.add('hidden');
+    videoPlayer.pause();
+    videoPlayer.src = '';
+});
+
+    </script>
+    
+</body>
+</html>
+
+    {% endblock %}

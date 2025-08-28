@@ -1,0 +1,6 @@
+  .text-purple { color: #800080; }
+        .text-light-purple { color: #b366cc; }
+        .shadow-glow { box-shadow: 0 0 15px rgba(128, 0, 128, 0.4); }
+        video::-webkit-media-controls { display: none; }
+        video::-moz-media-controls { display: none; }
+        video { -webkit-media-controls-enclosure: none; }

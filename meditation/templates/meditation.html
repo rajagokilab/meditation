@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body class="bg-[#ffedea] font-inter">
+
+<div class="container py-5">
+<div class="text-center mb-5">
+       <a href="{% url 'trial' %}">
+           <button class="btn btn-dark btn-lg px-5 shadow text-3xl">Start Your Free Trial</button>
+       </a>
+    </div>
+    <h1 class="text-center text-primary fw-bold mb-4 display-4">Meditation</h1>
+
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 text-center text-lg-start px-3">
+            <p class="text-muted h5 mb-2">Featured Meditation</p>
+            <h2 class="text-secondary fw-bold h2">Sleep Meditation</h2>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="position-relative rounded shadow-lg overflow-hidden">
+                <video id="meditationVideo" class="w-100" poster="{% static 'images/11.png' %}" autoplay muted playsinline>
+                    <source src="{% static 'videos/v6.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Overlay controls -->
+                <div id="videoOverlay" class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0,0,0,0.3); transition: 0.3s;">
+                    <button id="playPauseBtn" class="btn btn-light rounded-circle p-3">
+                        <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                            <path d="M11.596 8.697l-6.363 3.692A.5.5 0 0 1 4 12.892V3.108a.5.5 0 0 1 .768-.424l6.363 3.692a.5.5 0 0 1 0 .848z"/>
+                        </svg>
+                        <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-pause-fill d-none" viewBox="0 0 16 16">
+                            <path d="M5.5 3.5A.5.5 0 0 0 5 4v8a.5.5 0 0 0 1 0V4a.5.5 0 0 0-.5-.5zm5 0A.5.5 0 0 0 10 4v8a.5.5 0 0 0 1 0V4a.5.5 0 0 0-.5-.5z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Progress bar and timer -->
+                <div class="position-absolute bottom-0 start-0 end-0 p-2 p-md-3 text-white">
+                    <div class="d-flex justify-content-between small mb-1 flex-column flex-sm-row">
+                        <span class="mb-1 mb-sm-0">Soothe Anxiety to Sleep</span>
+                        <span><span id="currentTime">0:00</span> / <span id="totalTime">0:00</span></span>
+                    </div>
+                    <div class="progress" style="height:5px;">
+                        <div id="progressBar" class="progress-bar bg-white" role="progressbar" style="width:0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Button -->
+    <div class="text-center mb-5">
+       <a href="{% url 'trial' %}">
+           <button class="btn btn-dark btn-lg px-5 shadow">Start Your Free Trial</button>
+       </a>
+    </div>
+
+    <!-- Daily Themes -->
+    <div class="text-center">
+        <h2 class="fw-bold text-secondary mb-4 display-5">Daily Themes <span class="text-muted small">(5–10 minutes each)</span></h2>
+        <ul class="list-unstyled text-start text-md-center text-lg-center text-xl">
+            <li class="mb-3"><strong>Day 1 – Gratitude</strong><br>Focus on 3 things you're thankful for. Feel the warmth they bring.</li>
+            <li class="mb-3"><strong>Day 2 – Loving-Kindness</strong><br>Silently repeat: “May I be happy. May others be happy.”</li>
+            <li class="mb-3"><strong>Day 3 – Present Moment Joy</strong><br>Mindfully notice small joys—breath, light, sound—with full attention.</li>
+            <li class="mb-3"><strong>Day 4 – Smile Meditation</strong><br>Gently smile while breathing slowly. Let the feeling of ease spread.</li>
+            <li class="mb-3"><strong>Day 5 – Positive Memories</strong><br>Recall a joyful moment. Re-experience it with all your senses.</li>
+            <li class="mb-3"><strong>Day 6 – Self-Compassion</strong><br>Send kindness to yourself. Affirm: “I am enough. I deserve joy.”</li>
+            <li class="mb-3"><strong>Day 7 – Intentional Joy</strong><br>Visualize a joyful life. Imagine waking up smiling, living freely.</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('meditationVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const progressBar = document.getElementById('progressBar');
+    const currentTimeDisplay = document.getElementById('currentTime');
+    const totalTimeDisplay = document.getElementById('totalTime');
+    const overlay = document.getElementById('videoOverlay');
+
+    function formatTime(seconds){
+        const m = Math.floor(seconds/60);
+        const s = Math.floor(seconds%60);
+        return `${m}:${s<10?'0'+s:s}`;
+    }
+
+    playPauseBtn.addEventListener('click', () => {
+        if(video.paused || video.ended){
+            video.muted = false;
+            video.play();
+            playIcon.classList.add('d-none');
+            pauseIcon.classList.remove('d-none');
+            overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+        } else {
+            video.pause();
+            playIcon.classList.remove('d-none');
+            pauseIcon.classList.add('d-none');
+            overlay.style.backgroundColor = 'rgba(0,0,0,0.3)';
+        }
+    });
+
+    video.addEventListener('timeupdate', () => {
+        if(video.duration){
+            const percent = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = percent+'%';
+            currentTimeDisplay.textContent = formatTime(video.currentTime);
+        }
+    });
+
+    video.addEventListener('loadedmetadata', () => {
+        totalTimeDisplay.textContent = formatTime(video.duration);
+    });
+
+    video.addEventListener('ended', () => {
+        playIcon.classList.remove('d-none');
+        pauseIcon.classList.add('d-none');
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.3)';
+        progressBar.style.width = '0%';
+        currentTimeDisplay.textContent = '0:00';
+    });
+});
+</script>
+
+{% endblock %}

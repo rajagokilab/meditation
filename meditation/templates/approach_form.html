@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body class="bg-[#ffedea] font-inter ">
+
+
+<main class="min-vh-100 d-flex flex-column align-items-center justify-content-center p-4 w-100">
+
+    <!-- Dynamic Therapy Title -->
+   <h1 class="text-center fw-bold text-purple-600 my-4 text-5xl" style="color: #553355;">
+    {{ therapy_title }}
+</h1>
+<input type="hidden" name="therapy_title" value="{{ therapy_title }}">
+
+    <div class="card p-4 p-md-5 shadow-lg rounded-4" style="max-width: 768px; width: 100%;">
+        <div class="card-body">
+            <h2 class="card-title text-center fw-semibold text-dark mb-4 text-3xl" style="color: #553355;">Approach Form</h2>
+
+            <form action="" method="post" class="space-y-4">
+                {% csrf_token %}
+                <!-- Hidden input to pass therapy title -->
+                <input type="hidden" name="therapy_title" value="{{ therapy_title }}">
+
+                <!-- Name fields -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md">
+                        <input type="text" class="form-control" name="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="col-md">
+                        <input type="text" class="form-control" name="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- Other fields -->
+                <div class="mb-4">
+                    <input type="tel" class="form-control" name="mobileNo" placeholder="Mobile No" required>
+                </div>
+                <div class="mb-4">
+                    <input type="email" class="form-control" name="emailId" placeholder="E-Mail Id" required>
+                </div>
+                <div class="mb-4">
+                    <select name="therapyDay" class="form-select" required>
+                        <option value="" disabled selected>No. Of Therapy Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <input type="number" class="form-control" name="familyMembers" placeholder="Family Members Count" required>
+                </div>
+                <div class="mb-4">
+                    <textarea class="form-control" name="address" rows="4" placeholder="Address" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <select name="timeAvailability" class="form-select" required>
+                        <option value="" disabled selected>Time Availability</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <select name="currentCity" class="form-select" required>
+                        <option value="" disabled selected>Current City</option>
+                        <option value="karur">Karur</option>
+                        <option value="coimbatore">Coimbatore</option>
+                        <option value="chennai">Chennai</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                   <a href=""></a> <button type="submit" class="btn btn-submit w-100 shadow-sm bg-purple-400">
+                        Submit
+                    </button>
+                </div>
+            </form>
+            {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success text-center">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}

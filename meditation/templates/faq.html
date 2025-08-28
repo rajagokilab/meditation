@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <!-- Use a Google Font for a cleaner look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+     
+        .text-purple {
+            color: #800080; /* A shade of purple for the title */
+        }
+        /* Custom styling for the accordion transition */
+        .faq-content {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease-out, margin-top 0.3s ease-out;
+        }
+        .faq-content.open {
+            height: auto;
+            margin-top: 1rem;
+            transition: height 0.5s ease-in, margin-top 0.5s ease-in;
+        }
+        .faq-item {
+            border-bottom: 1px solid #d1d5db; /* A light gray border */
+        }
+        /* Style for the icon */
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body >
+    <section class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-7xl ">
+        <h1 class="text-4xl font-bold text-center text-purple mb-10">FAQs</h1>
+        
+        <!-- FAQ Item 1 -->
+        <div class="faq-item mb-4">
+            <div class="flex justify-between items-center cursor-pointer py-4" data-target="faq-1">
+                <p class="text-lg font-semibold text-gray-800">1. How do I know if I need therapy?</p>
+                <span class="faq-icon" data-icon="faq-1">+</span>
+            </div>
+            <div id="faq-1" class="faq-content pl-6 pr-6">
+                <p class="text-gray-700">If you're feeling overwhelmed, anxious, low, or stuck—or simply want to better understand yourself—therapy can help. You don't need a crisis to benefit from mental health support.</p>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="faq-item mb-4">
+            <div class="flex justify-between items-center cursor-pointer py-4" data-target="faq-2">
+                <p class="text-lg font-semibold text-gray-800">2. What is mental wellness?</p>
+                <span class="faq-icon" data-icon="faq-2">+</span>
+            </div>
+            <div id="faq-2" class="faq-content pl-6 pr-6">
+                <p class="text-gray-700">Mental wellness is a state of well-being in which an individual realizes their own abilities, can cope with the normal stresses of life, can work productively and fruitfully, and is able to make a contribution to their community.</p>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="faq-item mb-4">
+            <div class="flex justify-between items-center cursor-pointer py-4" data-target="faq-3">
+                <p class="text-lg font-semibold text-gray-800">3. What types of therapy do you offer?</p>
+                <span class="faq-icon" data-icon="faq-3">+</span>
+            </div>
+            <div id="faq-3" class="faq-content pl-6 pr-6">
+                <p class="text-gray-700">We offer a variety of therapy types, including Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), trauma-informed therapy, and person-centered counseling. We can discuss which approach is best suited for you during our initial consultation.</p>
+            </div>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="faq-item mb-4">
+            <div class="flex justify-between items-center cursor-pointer py-4" data-target="faq-4">
+                <p class="text-lg font-semibold text-gray-800">4. What can I expect in a therapy session?</p>
+                <span class="faq-icon" data-icon="faq-4">+</span>
+            </div>
+            <div id="faq-4" class="faq-content pl-6 pr-6">
+                <p class="text-gray-700">A typical therapy session lasts 50 minutes. It's a confidential and safe space for you to talk about your thoughts and feelings without judgment. The therapist's role is to listen, provide guidance, and help you develop coping strategies and a deeper understanding of yourself.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const header = item.querySelector('[data-target]');
+                const contentId = header.getAttribute('data-target');
+                const content = document.getElementById(contentId);
+                const icon = item.querySelector('[data-icon]');
+
+                header.addEventListener('click', () => {
+                    const isClickedItemOpen = content.classList.contains('open');
+
+                    // First, close all other open items and reset their icons.
+                    faqItems.forEach(otherItem => {
+                        const otherContent = document.getElementById(otherItem.querySelector('[data-target]').getAttribute('data-target'));
+                        const otherIcon = otherItem.querySelector('[data-icon]');
+                        otherContent.classList.remove('open');
+                        otherIcon.textContent = '+';
+                    });
+
+                    // Then, if the item that was just clicked was not already open, open it.
+                    if (!isClickedItemOpen) {
+                        content.classList.add('open');
+                        icon.textContent = '—';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

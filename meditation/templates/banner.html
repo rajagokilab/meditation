@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meditation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <div class="max-w-6xl mx-auto overflow-hidden shadow-lg relative mb-6 mt-6">
+    <!-- Background image of a person meditating at sunset -->
+    <img src="{% static 'images/2.jpg' %}" 
+         alt="A person meditating by the water at sunset" 
+         class="w-full h-full object-cover">
+
+    <!-- Join Now button -->
+    <a href="{% url 'therapy' %}" 
+       class="absolute right-40 top-1/2 -translate-y-1/2 px-6 py-2 rounded-full text-black font-semibold text-3xl
+              bg-gradient-to-r from-purple-900 to-blue-600 shadow-md 
+              hover:scale-105 hover:shadow-lg transition-transform duration-200">
+      Join Now
+    </a>
+  </div>
+
+</body>
+</html>

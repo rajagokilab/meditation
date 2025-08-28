@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f5f5f5] font-sans">
+
+  <section class="max-w-7xl mx-auto py-16 px-4">
+    <h2 class="text-4xl font-bold text-center text-[#7a5ba0] mb-12">Our Services</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Individual Therapy Card -->
+      <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 flex flex-col h-96 p-6">
+       <a href="{% url 'therapy' %}"> <div class="flex-1 flex flex-col">
+          <h4 class="text-xl font-semibold mb-4 text-[#333]">Individual Therapy</h4>
+          <div class="mt-auto">
+            <svg class="w-16 h-16 stroke-[#b78ccb]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke-width="2">
+              <circle cx="50" cy="25" r="15" />
+              <path d="M50 40 L50 70 M30 50 L70 50 M20 80 L80 80 M40 80 L40 100 M60 80 L60 100" />
+            </svg>
+          </div>
+        </div>
+      </div></a>
+
+      <!-- Image Card 1 -->
+      <a href="{% url 'therapy' %}">
+        <div class="rounded-3xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 h-96 flex flex-col">
+          <img src="{% static 'images/28.jpg' %}" alt="A person in a therapy session" class="w-full h-full object-cover">
+        </div>
+      </a>
+
+      <!-- Couples Therapy Card -->
+      <a href="{% url 'therapy' %}">
+        <div class="bg-[#7a5ba0] text-white rounded-3xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 flex flex-col h-96 p-6">
+          <div class="flex-1 flex flex-col">
+            <h4 class="text-xl font-semibold mb-4">Couples Therapy</h4>
+            <div class="mt-auto">
+              <svg class="w-16 h-16 stroke-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke-width="2">
+                <circle cx="35" cy="25" r="15" />
+                <circle cx="65" cy="25" r="15" />
+                <path d="M35 40 L35 70 M15 50 L55 50 M25 80 L75 80 M40 80 L40 100 M60 80 L60 100" />
+                <path d="M65 40 L65 70 M45 50 L85 50 M55 80 L95 80 M70 80 L70 100 M90 80 L90 100" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Group Therapy Card -->
+      <a href="{% url 'therapy' %}">
+        <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 flex flex-col h-96 p-6">
+          <div class="flex-1 flex flex-col">
+            <h4 class="text-xl font-semibold mb-4 text-[#333]">Group Therapy</h4>
+            <div class="mt-auto">
+              <svg class="w-16 h-16 stroke-[#b78ccb]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke-width="2">
+                <circle cx="50" cy="25" r="12" />
+                <circle cx="25" cy="35" r="12" />
+                <circle cx="75" cy="35" r="12" />
+                <path d="M50 37 L50 67 M30 45 L70 45 M25 47 L25 77 M5 57 L45 57 M75 47 L75 77 M55 57 L95 57" />
+                <path d="M25 80 L25 100 M50 80 L50 100 M75 80 L75 100" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Image Card 2 -->
+      <a href="{% url 'therapy' %}">
+        <div class="rounded-3xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 h-96 flex flex-col">
+          <img src="{% static 'images/7.jpg' %}" alt="A family smiling and sitting on a couch" class="w-full h-full object-cover">
+        </div>
+      </a>
+
+      <!-- Family Therapy Card -->
+      <a href="{% url 'therapy' %}">
+        <div class="bg-[#7a5ba0] text-white rounded-3xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 flex flex-col h-96 p-6">
+          <div class="flex-1 flex flex-col">
+            <h4 class="text-xl font-semibold mb-4 text-[#333]">Family Therapy</h4>
+            <div class="mt-auto">
+              <svg class="w-16 h-16 stroke-[#b78ccb]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke-width="2">
+                <circle cx="30" cy="25" r="10" />
+                <circle cx="50" cy="25" r="10" />
+                <circle cx="70" cy="25" r="10" />
+                <circle cx="45" cy="45" r="8" />
+                <circle cx="55" cy="45" r="8" />
+                <path d="M30 35 L30 60 M20 40 L40 40 M50 35 L50 60 M40 40 L60 40 M70 35 L70 60 M60 40 L80 40" />
+                <path d="M45 53 L45 73 M55 53 L55 73 M40 70 L60 70" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Image Card 3 -->
+      <a href="{% url 'therapy' %}">
+        <div class="rounded-3xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 h-96 flex flex-col">
+          <img src="{% static 'images/11.jpg' %}" alt="People sitting in a circle with their hands together" class="w-full h-full object-cover">
+        </div>
+      </a>
+
+      <!-- Online Therapy Card -->
+      <a href="{% url 'therapy' %}">
+        <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-200 flex flex-col h-96 p-6">
+          <div class="flex-1 flex flex-col">
+            <h4 class="text-xl font-semibold mb-4 text-[#333]">Online Therapy</h4>
+            <div class="mt-auto">
+              <svg class="w-16 h-16 stroke-[#b78ccb]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke-width="2">
+                <rect x="5" y="50" width="40" height="30" rx="5" ry="5" />
+                <line x1="5" y1="80" x2="45" y2="80" />
+                <rect x="55" y="10" width="35" height="40" rx="5" ry="5" />
+                <circle cx="72.5" cy="25" r="5" />
+                <line x1="55" y1="50" x2="90" y2="50" />
+                <path d="M45 65 L55 65 M55 65 L55 35 M55 35 L45 35" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</body>
+</html>

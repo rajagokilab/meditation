@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body class="bg-[#ffedea] font-inter">
+<section class="py-5 min-vh-100">
+  <div class="container">
+
+    <!-- Main Heading Section -->
+    <h1 class="text-center text-primary fw-bold mb-5 text-4xl">DEE PLUS Therapy</h1>
+
+    <!-- Introduction Section with Text and Image -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 mb-4 mb-md-0 text-secondary font-bold p-6">
+        <p>
+          Therapy is a process where a person works with a trained professional to explore thoughts, feelings, and behaviors in order to improve mental health, cope with challenges, and promote personal growth. It can include talking, practicing new skills, or using specific techniques to heal, understand oneself better, or manage life more effectively.
+           Therapy is a process where a person works with a trained professional to explore thoughts, feelings, and behaviors in order to improve mental health, cope with challenges, and promote personal growth. It can include talking, practicing new skills, or using specific techniques to heal, understand oneself better, or manage life more effectively.
+
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'images/16.png' %}"
+             alt="A person in therapy with a professional."
+             class="img-fluid rounded-3 shadow" style="width: 600px; height: 400px;">
+      </div>
+    </div>
+
+    <!-- Services Section Title -->
+    <h2 class="text-center text-primary fw-bold mb-4 text-4xl">Our Services</h2>
+
+    <!-- Services Grid -->
+    <div class="row g-4">
+      <!-- Individual Therapy Card -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="{% url 'therapy_detail' 'individual Therapy' %}" class="text-decoration-none">
+          <div class="card h-100 shadow-sm border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/22.jpg' %}" class="card-img-top" alt="Two people having an individual therapy session.">
+            <div class="card-body text-center">
+              <h5 class="card-title text-dark font-bold">Individual Therapy</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Couple Therapy Card -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="{% url 'therapy_detail' 'Couple Therapy' %}" class="text-decoration-none">
+          <div class="card h-100 shadow-sm border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/24.jpeg' %}" class="card-img-top" alt="A couple in therapy with a professional.">
+            <div class="card-body text-center">
+              <h5 class="card-title text-dark font-bold">Couple Therapy</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Family Therapy Card -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="{% url 'therapy_detail' 'Family Therapy' %}" class="text-decoration-none">
+          <div class="card h-100 shadow-sm border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/3.jpg' %}" class="card-img-top" alt="A family in therapy with a professional.">
+            <div class="card-body text-center">
+              <h5 class="card-title text-dark font-bold">Family Therapy</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Group Therapy Card -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="{% url 'therapy_detail' 'Group Therapy' %}" class="text-decoration-none">
+          <div class="card h-100 shadow-sm  border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/9.jpg' %}" class="card-img-top" alt="A group of people in therapy.">
+            <div class="card-body text-center">
+              <h5 class="card-title text-dark font-bold">Group Therapy</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Online Therapy Card -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="{% url 'therapy_detail' 'Online Therapy' %}" class="text-decoration-none">
+          <div class="card h-100 shadow-sm border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/15.jpg' %}" class="card-img-top" alt="A person in an online therapy session.">
+            <div class="card-body text-center">
+              <h2 class="card-title text-dark font-bold">Online Therapy</h2>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

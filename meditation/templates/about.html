@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body class="bg-[#ffedea] font-inter">
+    
+<!-- Page Header -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#7a5ba0]">About DEE PLUS</h2>
+    </div>
+</body>
+ <!-- Mission Section -->
+<div class="p-8 mb-8 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- Image -->
+        <img src="{% static 'images/m1.png' %}" 
+             alt="Our Mission" 
+             class="w-48 md:w-64 lg:w-72 object-cover rounded-lg mx-auto md:mx-0">
+        
+        <!-- Text -->
+        <div class="md:w-1/2">
+            <h3 class="text-6xl font-semibold text-[#4c3d7b] mb-4">Our Mission</h3>
+            <p class="text-2xl">Our mission is to provide a valuable resource of information and downloads to people who want to evolve mentally, emotionally and spiritually, and to help people become healthier, happier and more peaceful.</p>
+        </div>
+    </div>
+</div>
+
+      <!-- Who We Are Section -->
+<div class="p-8 mb-8 max-w-4xl mx-auto">
+    <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-8 text-center md:text-left">
+        <!-- Image -->
+        <img src="{% static 'images/5.png' %}" alt="A person meditating" 
+             class="w-24 h-24 rounded-full border-2 border-purple-500 shadow-md mx-auto md:mx-0">
+        
+        <!-- Text -->
+        <div class="md:w-1/2">
+            <h3 class="text-5xl font-semibold text-[#4c3d7b] mb-4">What we do</h3>
+            <p class="text-2xl">Think of DEE PLUS as your lifelong guide to better mental health. We’re here for you whenever you need us, wherever you are, helping you get through tough times and find joy in every day.</p>
+        </div>
+    </div>
+</div>
+  <!-- Who We Are Section -->
+<div class="p-8 mb-8 max-w-4xl mx-auto">
+    <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-8 text-center md:text-left">
+        <!-- Image -->
+        <img src="{% static 'images/6.png' %}" alt="A person meditating" 
+             class="w-24 h-24 rounded-full border-2 border-purple-500 shadow-md mx-auto md:mx-0">
+        
+        <!-- Text -->
+        <div class="md:w-1/2">
+            <h3 class="text-5xl font-semibold text-[#4c3d7b] mb-4">Who We Are</h3>
+            <p class="text-2xl">Think of DEE PLUS as your lifelong guide to better mental health. We’re here for you whenever you need us, wherever you are, helping you get through tough times and find joy in every day.</p>
+        </div>
+    </div>
+</div>
+
+    <!-- How We Do It Section -->
+   <div class="p-8 mb-8 mx-auto max-w-4xl">
+    <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-8 text-center md:text-left">
+        <!-- Image -->
+        <img src="{% static 'images/5.png' %}" alt="A person meditating" 
+             class="w-24 h-24 rounded-full border-2 border-purple-500 shadow-md mx-auto md:mx-0">
+        
+        <!-- Text -->
+        <div class="md:w-1/2">
+            <h3 class="text-5xl font-semibold text-[#4c3d7b] mb-4">How We Do It</h3>
+            <p class="text-2xl w-full ">Our four values inform our decisions and how we operate day-to-day; put members first; bring a beginner’s mind; seek truth, speak truth; embrace ownership.</p>
+        </div>
+    </div>
+</div>
+     <!-- Meet The Teachers Section -->
+    <div class="p-8  mx-auto mt-12">
+        <h2 class="text-3xl font-bold text-center text-[#7a5ba0] mb-8">Meet DEE PLUS Teachers</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Teacher Card 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                <img src="{% static 'images/t1.png' %}" alt="Kessonga" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h5 class="font-semibold text-[#7a5ba0] text-xl mb-2">Kessonga</h5>
+                <p class="text-gray-600 text-sm">Kessonga is a meditation teacher, therapist, and acupuncturist who has worked with populations of all ages and backgrounds.</p>
+            </div>
+            <!-- Teacher Card 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                <img src="{% static 'images/t2.png' %}" alt="Andy" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h5 class="font-semibold text-[#7a5ba0] text-xl mb-2">Andy</h5>
+                <p class="text-gray-600 text-sm">Andy is a former Buddhist monk and co-founder of the DEE PLUS app. Andy has guided people in meditation for over 20 years.</p>
+            </div>
+            <!-- Teacher Card 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                <img src="{% static 'images/t3.png' %}" alt="Eve" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h5 class="font-semibold text-[#7a5ba0] text-xl mb-2">Eve</h5>
+                <p class="text-gray-600 text-sm">Eve has been with DEE PLUS since the beginning, teaching meditation and overseeing our meditation curriculum.</p>
+            </div>
+            <!-- Teacher Card 4 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                <img src="{% static 'images/t4.png' %}" alt="Dora" class="w-full h-48 object-cover rounded-xl mb-4">
+                <h5 class="font-semibold text-[#7a5ba0] text-xl mb-2">Dora</h5>
+                <p class="text-gray-600 text-sm">Dora is a meditation teacher and former psychiatric nurse who is passionate about the healing powers of connection and community.</p>
+            </div>
+        </div>
+{% endblock %}

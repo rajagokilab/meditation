@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body class="bg-[#ffedea] font-inter">
+
+<div class="p-8 md:p-12 max-w-6xl w-full mx-auto">
+    <!-- Main Heading Section -->
+  <!-- Main Heading Section --> <h1 class="text-3xl md:text-4xl font-bold text-center text-[#553355] my-6"> {{ therapy_name }} </h1> <p class="text-center text-lg text-gray-600 mb-8"> Family issues can be one of the biggest mental health stressors in a person’s life. Seeking help through family therapy can be an important step toward healing for you and your loved ones. </p>
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/3.jpg' %}" alt="A family in therapy" class="w-full h-auto object-cover">
+            <div class="p-4 text-center">
+                {% with card_title="Understanding ‘Family Of Origin’ Work in Therapy" %}
+                <h3 class="text-xl font-semibold text-[#553355] mb-2">{{ card_title }}</h3>
+                <a href="{% url 'approach_form' %}?title={{ card_title|urlencode }}"
+                   class="bg-[#9B609B] text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-[#A975A9] transition-colors duration-300">
+                   I Get This
+                </a>
+                {% endwith %}
+                <p class="text-xs text-gray-500 mt-2">Medically reviewed By Rotary- LCP</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/9.jpg' %}" alt="People in therapy" class="w-full h-auto object-cover">
+            <div class="p-4 text-center">
+                {% with card_title="How Structural Family Therapy Works" %}
+                <h3 class="text-xl font-semibold text-[#553355] mb-2">{{ card_title }}</h3>
+                <a href="{% url 'approach_form' %}?title={{ card_title|urlencode }}"
+                   class="bg-[#9B609B] text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-[#A975A9] transition-colors duration-300">
+                   I Get This
+                </a>
+                {% endwith %}
+                <p class="text-xs text-gray-500 mt-2">Medically reviewed By Carno- MD</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/23.jpg' %}" alt="Brain abstract" class="w-full h-auto object-cover">
+            <div class="p-4 text-center">
+                {% with card_title="What to Know About Internal Family System (IFS) Therapy" %}
+                <h3 class="text-xl font-semibold text-[#553355] mb-2">{{ card_title }}</h3>
+                <a href="{% url 'approach_form' %}?title={{ card_title|urlencode }}"
+                   class="bg-[#9B609B] text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-[#A975A9] transition-colors duration-300">
+                   I Get This
+                </a>
+                {% endwith %}
+                <p class="text-xs text-gray-500 mt-2">Medically reviewed By Rotary- MD</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/10.jpg' %}" alt="Child therapy" class="w-full h-auto object-cover">
+            <div class="p-4 text-center">
+                {% with card_title="What Is Filial Therapy?" %}
+                <h3 class="text-xl font-semibold text-[#553355] mb-2">{{ card_title }}</h3>
+                <a href="{% url 'approach_form' %}?title={{ card_title|urlencode }}"
+                   class="bg-[#9B609B] text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-[#A975A9] transition-colors duration-300">
+                   I Get This
+                </a>
+                {% endwith %}
+                <p class="text-xs text-gray-500 mt-2">Medically reviewed By Rotary- LCP</p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/7.jpg' %}" alt="Parent child reading" class="w-full h-auto object-cover">
+            <div class="p-4 text-center">
+                {% with card_title="Parent - Child Interaction Therapy" %}
+                <h3 class="text-xl font-semibold text-[#553355] mb-2">{{ card_title }}</h3>
+                <a href="{% url 'approach_form' %}?title={{ card_title|urlencode }}"
+                   class="bg-[#9B609B] text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-[#A975A9] transition-colors duration-300">
+                   I Get This
+                </a>
+                {% endwith %}
+                <p class="text-xs text-gray-500 mt-2">Medically reviewed By Rotary- LCP</p>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-[#553355] overflow-hidden">
+            <img src="{% static 'images/28.jpg' %}" alt="Motherhood stages" class="w-full h-auto object-cover">
+            <div class="p-4 text-center">
+                {% with card_title="How to Mentally Prepare For Motherhood, According to Parenting Coach" %}
+                <h3 class="text-xl font-semibold text-[#553355] mb-2">{{ card_title }}</h3>
+                <a href="{% url 'approach_form' %}?title={{ card_title|urlencode }}"
+                   class="bg-[#9B609B] text-white py-2 px-6 rounded-full font-bold text-sm hover:bg-[#A975A9] transition-colors duration-300">
+                   I Get This
+                </a>
+                {% endwith %}
+                <p class="text-xs text-gray-500 mt-2">Medically reviewed By Rotary- LCP</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

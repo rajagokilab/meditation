@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<body class="bg-[#ffedea] font-inter">
+    
+<div class="flex items-center justify-center ">
+{% include 'banner.html' %}
+            </div>
+
+
+ <!-- Main Content Container -->
+   <section class=" text-gray-800 p-4 flex items-center justify-center min-h-screen">
+    <div class="p-4 max-w-7xl w-full">
+        <!-- Main Title -->
+        <h1 class="text-center text-4xl font-bold mb-8 text-[#9b59b6] tracking-wide">
+            What <span class="text-purple-700 font-extrabold">DEE PLUS</span> Stands For
+        </h1>
+        
+        <!-- Two-column layout for desktop, stacked for mobile -->
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
+            
+            <!-- Left Column: Word definitions -->
+            <div class="w-full md:w-1/2 flex-1 p-4">
+                <div class="space-y-4">
+                    <!-- Mindfulness -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">M</span>
+                        <span class="font-semibold text-lg">Mindfulness</span>
+                        <span class="text-gray-600">Being aware of the present</span>
+                    </div>
+                    <!-- Equanimity -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">E</span>
+                        <span class="font-semibold text-lg">Equanimity</span>
+                        <span class="text-gray-600">Calm and balanced emotions</span>
+                    </div>
+                    <!-- Discipline -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">D</span>
+                        <span class="font-semibold text-lg">Discipline</span>
+                        <span class="text-gray-600">Consistency in practice</span>
+                    </div>
+                    <!-- Inner Peace -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">I</span>
+                        <span class="font-semibold text-lg">Inner Peace</span>
+                        <span class="text-gray-600">A state of deep tranquility</span>
+                    </div>
+                    <!-- Tranquility -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">T</span>
+                        <span class="font-semibold text-lg">Tranquility</span>
+                        <span class="text-gray-600">Soothing the restless mind</span>
+                    </div>
+                    <!-- Awareness -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">A</span>
+                        <span class="font-semibold text-lg">Awareness</span>
+                        <span class="text-gray-600">Conscious observation without reaction</span>
+                    </div>
+                    <!-- Transformation -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">T</span>
+                        <span class="font-semibold text-lg">Transformation</span>
+                        <span class="text-gray-600">Gradual personal growth</span>
+                    </div>
+                    <!-- Intention -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">I</span>
+                        <span class="font-semibold text-lg">Intention</span>
+                        <span class="text-gray-600">Clarity of purpose</span>
+                    </div>
+                    <!-- Observation -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">O</span>
+                        <span class="font-semibold text-lg">Observation</span>
+                        <span class="text-gray-600">Watching thoughts without control</span>
+                    </div>
+                    <!-- Now -->
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-purple-700">N</span>
+                        <span class="font-semibold text-lg">Now</span>
+                        <span class="text-gray-600">Anchoring yourself in the present moment</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider Line for Desktop -->
+            <div class="hidden md:block w-px self-stretch bg-gray-300"></div>
+            
+            <!-- Right Column: Illustration and benefits -->
+            <div class="w-full md:w-1/2 flex-1 p-4 flex flex-col items-center">
+                <!-- Meditation Illustration (Image) -->
+                <div class="w-full max-w-sm mb-8">
+                    <img src="{% static 'images/29.png' %}" alt="DEE PLUS meditation illustration" class="w-full rounded-2xl shadow-lg">
+                </div>
+
+                <!-- "In Therapy Helps With" Section -->
+                <div class="w-full text-center mt-4">
+                    <h2 class="text-2xl font-bold mb-4 text-[#8b5cf6]">In Therapy Helps With</h2>
+                    <ul class="list-none text-center space-y-2">
+                        <li class="text-gray-600">Reducing stress and anxiety</li>
+                        <li class="text-gray-600">Enhancing focus and clarity</li>
+                        <li class="text-gray-600">Improving emotional regulation</li>
+                        <li class="text-gray-600">Promoting self-awareness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+     {% include 'ourservice.html' %}
+     
+     {% include 'testimonials.html' %}
+
+     
+     {% include 'people.html' %}
+
+     {% include 'faq.html' %}
+
+
+</body>
+{% endblock %}

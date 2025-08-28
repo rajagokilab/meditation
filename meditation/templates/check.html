@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fce4ec,#125960;
+            color: #4b5563;
+        }
+        .text-purple { color: #800080; }
+        .text-light-purple { color: #b366cc; }
+        .shadow-glow { box-shadow: 0 0 15px rgba(128, 0, 128, 0.4); }
+        video::-webkit-media-controls { display: none; }
+        video::-moz-media-controls { display: none; }
+        video { -webkit-media-controls-enclosure: none; }
+    </style>
+</head>
+<body class="flex flex-col items-center p-8 min-h-screen">
+    <div class="w-full max-w-4xl">
+        <h1 class="text-4xl font-bold text-center text-purple mb-12">Meditation</h1>
+        
+        <!-- Top "Start Your Free Trial" Button -->
+        <div class="flex justify-center mb-12">
+            <button class="bg-black text-white py-3 px-8 rounded-full text-lg font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:shadow-glow">
+                Start Your Free Trial
+            </button>
+        </div>
+        
+        <!-- Featured Meditation Section -->
+        <div class="flex flex-col md:flex-row items-center justify-between mb-12">
+            <div class="md:w-1/3 mb-8 md:mb-0">
+                <p class="text-sm font-light text-gray-500">Featured Meditation</p>
+                <h2 class="text-2xl font-bold text-light-purple mt-1">Sleep Meditation</h2>
+            </div>
+            
+            <div class="w-full md:w-2/3 relative rounded-xl overflow-hidden shadow-lg">
+                <!-- Video Element -->
+                <video id="meditationVideo" class="w-full h-auto object-cover"
+                       poster="{% static 'images/meditation-poster.png' %}"
+                       autoplay muted playsinline>
+                    <source src="{% static 'videos/meditation.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <!-- Custom Controls Overlay -->
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center">
+                    <button id="playPauseBtn" class="bg-white bg-opacity-30 rounded-full p-4 transition-all duration-200 hover:scale-110">
+                        <svg id="playIcon" class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="pauseIcon" class="w-12 h-12 text-white hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <div class="flex justify-between items-center text-sm font-medium">
+                        <span>Soothe Anxiety to Sleep</span>
+                        <div class="text-gray-300 flex space-x-1">
+                            <span id="currentTime">0:00</span>
+                            <span>/</span>
+                            <span id="totalTime">0:00</span>
+                        </div>
+                    </div>
+                    <div class="w-full h-1 bg-white bg-opacity-30 rounded-full mt-2">
+                        <div id="progressBar" class="h-1 bg-white rounded-full transition-all duration-100 ease-linear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom "Start Your Free Trial" Button -->
+        <div class="flex justify-center mb-12">
+            <button class="bg-black text-white py-3 px-8 rounded-full text-lg font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:shadow-glow">
+                Start Your Free Trial
+            </button>
+        </div>
+        
+        <!-- Daily Themes Section -->
+        <div class="text-center">
+            <h2 class="text-2xl font-bold text-light-purple mb-6">Daily Themes <span class="text-gray-500">(5–10 minutes each)</span></h2>
+            <ul class="text-lg space-y-4">
+                <li><strong class="font-semibold">Day 1 – Gratitude</strong><br>Focus on 3 things you're thankful for. Feel the warmth they bring.</li>
+                <li><strong class="font-semibold">Day 2 – Loving-Kindness</strong><br>Silently repeat: “May I be happy. May others be happy.”</li>
+                <li><strong class="font-semibold">Day 3 – Present Moment Joy</strong><br>Mindfully notice small joys—breath, light, sound—with full attention.</li>
+                <li><strong class="font-semibold">Day 4 – Smile Meditation</strong><br>Gently smile while breathing slowly. Let the feeling of ease spread.</li>
+                <li><strong class="font-semibold">Day 5 – Positive Memories</strong><br>Recall a joyful moment. Re-experience it with all your senses.</li>
+                <li><strong class="font-semibold">Day 6 – Self-Compassion</strong><br>Send kindness to yourself. Affirm: “I am enough. I deserve joy.”</li>
+                <li><strong class="font-semibold">Day 7 – Intentional Joy</strong><br>Visualize a joyful life. Imagine waking up smiling, living freely.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Video JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('meditationVideo');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            const progressBar = document.getElementById('progressBar');
+            const currentTimeDisplay = document.getElementById('currentTime');
+            const totalTimeDisplay = document.getElementById('totalTime');
+            const controlsOverlay = playPauseBtn.parentElement;
+
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = Math.floor(seconds % 60);
+                return `${minutes}:${remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds}`;
+            }
+
+            // Play/Pause button
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused || video.ended) {
+                    video.muted = false; // unmute on user interaction
+                    video.play();
+                    playIcon.classList.add('hidden');
+                    pauseIcon.classList.remove('hidden');
+                    controlsOverlay.classList.add('bg-opacity-0');
+                    controlsOverlay.classList.remove('bg-opacity-30');
+                } else {
+                    video.pause();
+                    playIcon.classList.remove('hidden');
+                    pauseIcon.classList.add('hidden');
+                    controlsOverlay.classList.remove('bg-opacity-0');
+                    controlsOverlay.classList.add('bg-opacity-30');
+                }
+            });
+
+            // Update progress bar and time
+            video.addEventListener('timeupdate', () => {
+                const percentage = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = `${percentage}%`;
+                currentTimeDisplay.textContent = formatTime(video.currentTime);
+            });
+
+            video.addEventListener('loadedmetadata', () => {
+                totalTimeDisplay.textContent = formatTime(video.duration);
+            });
+
+            video.addEventListener('ended', () => {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                controlsOverlay.classList.remove('bg-opacity-0');
+                controlsOverlay.classList.add('bg-opacity-30');
+                progressBar.style.width = '0%';
+                currentTimeDisplay.textContent = '0:00';
+            });
+        });
+    </script>
+</body>
+</html>
